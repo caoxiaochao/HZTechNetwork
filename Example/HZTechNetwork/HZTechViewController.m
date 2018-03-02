@@ -7,7 +7,7 @@
 //
 
 #import "HZTechViewController.h"
-
+#import "HZNetworking.h"
 @interface HZTechViewController ()
 
 @end
@@ -18,6 +18,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [HZNetworking postWithUrl:@"http://news-at.zhihu.com/api/4/news/latest" isAESCipher:NO params:nil successBlock:^(id responseObject) {
+        NSLog(@"%@",responseObject);
+    } failBlock:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
 }
 
 - (void)didReceiveMemoryWarning
