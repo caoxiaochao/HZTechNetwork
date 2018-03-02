@@ -1,0 +1,2 @@
+# HZTechNetwork
+基于AFNetworking二次封装的网络请求框架，包含参数AES加密功能
